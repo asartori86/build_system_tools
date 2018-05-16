@@ -1,0 +1,2 @@
+subdir('mathematics')
+subdir('physics')
