@@ -19,8 +19,8 @@ enable_testing()
 
 set(GTEST_DIR "" CACHE STRING "google test dir")
 
-find_path(GTEST_INC_DIR gtest/gtest.h
-  PATHS
+find_path(GTEST_INC_DIR "gtest/gtest.h"
+  HINTS
   ${GTEST_DIR}/include
   ${GTEST_DIR}/googletest/include)
 
@@ -35,7 +35,6 @@ find_path(GTEST_SOURCE_DIR gtest-all.cc
 if(NOT GTEST_SOURCE_DIR)
   message(FATAL_ERROR "Couldn't find gtest-all.cc under folder GTEST_DIR=" ${GTEST_DIR})
 endif()
-
 
 set(GTEST_LIB_SOURCES ${GTEST_SOURCE_DIR}/gtest-all.cc)
 set(GTEST_MAIN_SOURCES ${GTEST_SOURCE_DIR}/gtest_main.cc)
