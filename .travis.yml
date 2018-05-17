@@ -1,6 +1,15 @@
 sudo: false
 language: cpp
 
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libboost-all-dev
+
+
 matrix:
   include:
     - os: linux
