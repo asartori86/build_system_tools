@@ -8,6 +8,8 @@ add_executable(${name} main.cc)
 
 include_directories(include)
 
+add_definitions("-std=c++11")
+
 add_library(mathematics SHARED src/mathematics.cc)
 
 add_library(physics SHARED src/physics.cc)

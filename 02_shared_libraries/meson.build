@@ -1,4 +1,7 @@
-project('shared_libs', 'cpp')
+project('shared_libs', 'cpp',
+        default_options : ['cpp_std=c++11',
+			   'buildtype=debug',
+			   'warning_level=3'])
 
 main = files('main.cc')
 
@@ -12,5 +15,5 @@ libphys = shared_library('physics', ['src/physics.cc'],
 
 executable(meson.project_name(), main,
            include_directories: inc_dirs,
-           link_with: [libmath, libphys]
-)
+           link_with: [libmath, libphys])
+

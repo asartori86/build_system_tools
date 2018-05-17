@@ -10,3 +10,5 @@ add_executable(${name} main.cc
   )
 
 include_directories(include)
+
+add_definitions("-std=c++11")

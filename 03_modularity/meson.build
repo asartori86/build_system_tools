@@ -1,4 +1,7 @@
-project('modularity', 'cpp')
+project('modularity', 'cpp',
+        default_options : ['cpp_std=c++11',
+			   'buildtype=debug',
+			   'warning_level=3'])
 
 main = files('main.cc')
 

@@ -1,12 +1,13 @@
-project('external_lib', 'cpp')
+project('external_libs', 'cpp',
+        default_options : ['cpp_std=c++11',
+			   'buildtype=debug',
+			   'warning_level=3'])
 
 main = files('main.cc')
 
 inc_dirs = include_directories('include')
 
-
 boost_dep = dependency('boost', modules : 'program_options')
-
 
 # cxx = meson.get_compiler('cpp')
 # boost_dep = cxx.find_library('boost_program_options', dirs: ['/wherever'])

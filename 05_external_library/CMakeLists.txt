@@ -8,6 +8,8 @@ add_executable(${name} main.cc)
 
 include_directories(include)
 
+add_definitions("-std=c++11")
+
 add_subdirectory(src)
 
 # it must be in the same file where the executable has been defined

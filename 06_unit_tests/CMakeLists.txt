@@ -1,12 +1,14 @@
 cmake_minimum_required(VERSION 3.9)
 
-set(name how_to_test_01)
+set(name how_to_test_02)
 
 project(${name} CXX)
 
 add_executable(${name} main.cc)
 
 include_directories(include)
+
+add_definitions("-std=c++11")
 
 add_subdirectory(src)
 
