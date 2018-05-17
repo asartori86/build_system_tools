@@ -4,7 +4,7 @@
 #include "mathematics.h"
 #include "physics.h"
 
-int main(int argc, char* argv[]) {
+int main() {
   std::cout << "area of a circle " << math::circle::area(1.0) << std::endl;
 
   std::cout << "perimeter of a circle " << math::circle::perimeter(1.0)
