@@ -1,0 +1,40 @@
+sudo: false
+language: cpp
+
+# addons:
+#   apt:
+#     sources:
+#       - llvm-toolchain-precise-3.8
+#       - ubuntu-toolchain-r-test
+#     packages:
+#       - cmake
+
+matrix:
+  include:
+    - os: linux
+      compiler: gcc
+    - os: osx
+      compiler: clang
+
+before_install:
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-linux.zip && unzip ninja-linux.zip ;    else  wget https://github.com/ninja-build/ninja/releases/download/v1.8.2/ninja-mac.zip && unzip ninja-mac.zip; fi
+  - export PATH="$PWD:$PATH"
+  - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh && bash Miniconda3-latest-Linux-x86_64.sh -b -p _miniconda;  else  wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh && bash Miniconda3-latest-MacOSX-x86_64.sh -b -p _miniconda; fi
+  - export PATH="$PWD/_miniconda/bin:$PATH"
+  - conda config --set always_yes yes --set changeps1 no
+  - conda update -q conda
+  - conda create --yes -n py36 python=3.6
+  - source activate py36
+  - git clone https://github.com/mesonbuild/meson.git _meson
+  - export PATH="$PWD/_meson:$PATH"
+
+install: true
+
+script:
+  - pushd 01_basic && mkdir bcmake && cd bcmake && cmake .. && make && cd .. && meson.py bmeson && cd bmeson && ninja && popd
+  - pushd 02_shared_libraries && mkdir bcmake && cd bcmake && cmake .. && make && cd .. && meson.py bmeson && cd bmeson && ninja && popd
+  - pushd 03_modularity && mkdir bcmake && cd bcmake && cmake .. && make && cd .. && meson.py bmeson && cd bmeson && ninja && popd
+  - pushd 04_tests && mkdir bcmake && cd bcmake && cmake .. && make && ctest && cd .. && meson.py bmeson && cd bmeson && ninja && meson.py test && popd
+  - pushd 05_external_library && mkdir bcmake && cd bcmake && cmake .. && make && cd .. && meson.py bmeson && cd bmeson && ninja && popd
+  - pushd 06_unit_tests && mkdir bcmake && cd bcmake && cmake .. && make && ctest && cd .. && meson.py bmeson && cd bmeson && ninja && meson.py test && popd
+
