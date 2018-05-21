@@ -36,7 +36,8 @@ script:
   - pushd 03_modularity && mkdir bcmake && cd bcmake && cmake .. && make && cd .. && meson.py bmeson && cd bmeson && ninja && popd
   - pushd 04_tests && mkdir bcmake && cd bcmake && cmake .. && make && ctest && cd .. && meson.py bmeson && cd bmeson && ninja && meson.py test && popd
   - pushd 05_external_library && mkdir bcmake && cd bcmake && cmake .. && make && cd .. && meson.py bmeson && cd bmeson && ninja && popd
-  - pushd 06_unit_tests && meson.py bmeson && cd bmeson && ninja && meson.py test && cd .. && mkdir bcmake && cd bcmake && cmake -DGTEST_DIR=$PWD/../subprojects/googletest-release-1.8.0/ .. && make && ctest
+  - pushd 06_unit_tests && meson.py bmeson && cd bmeson && ninja && meson.py test && cd .. && mkdir bcmake && cd bcmake && cmake -DGTEST_DIR=$PWD/../subprojects/googletest-release-1.8.0/ .. && make && ctest && popd
+  - pushd 07_customization && meson.py -DENABLE_TESTING=true bmeson && cd bmeson && ninja && meson.py test && cd .. && mkdir bcmake && cd bcmake && cmake -DGTEST_DIR=$PWD/../subprojects/googletest-release-1.8.0/ -DENABLE_TESTING=ON .. && make && ctest && popd
 
 
 
