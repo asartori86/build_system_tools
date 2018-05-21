@@ -1,0 +1,10 @@
+#ifndef __my_config_h__
+#define __my_config_h__
+
+#define MY_PROJECT_VERSION_MAJOR @customization_VERSION_MAJOR@ 
+#define MY_PROJECT_VERSION_MINOR @customization_VERSION_MINOR@ 
+
+#cmakedefine BUILD_PHYSICS
+#cmakedefine BUILD_MATHEMATICS
+
+#endif

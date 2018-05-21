@@ -1,0 +1,9 @@
+#ifndef __my_config_h__
+#define __my_config_h__
+
+#define MY_PROJECT_VERSION @version@
+
+#mesondefine BUILD_PHYSICS
+#mesondefine BUILD_MATHEMATICS
+
+#endif
