@@ -30,3 +30,19 @@ _cdata.set('BUILD_MATHEMATICS', get_option('BUILD_MATHEMATICS'))
 configure_file(output: 'my_project_config.h',
                input: 'include/my_project_config_meson.h.in',
                configuration: _cdata)
+
+message('\n\n'+
+        '###\n'+
+        '#\n'+
+        '# Library name:\t\t' + meson.project_name() +'\n'+
+	'# Library version:\t\t' + meson.project_version() +'\n'+
+        '#\n'+
+	'# Build options:\n'+
+        '#   BUILD_MATHEMATICS:\t\t' + get_option('BUILD_MATHEMATICS').to_string() + '\n'+
+        '#   BUILD_PHYSICS:\t\t' + get_option('BUILD_PHYSICS').to_string() + '\n'+
+        '#\n'+
+	'# Project options:\n'+
+        '#   ENABLE_TESTING:\t\t' + get_option('ENABLE_TESTING').to_string() + '\n'+
+        '#\n'+
+        '###\n'
+	)
