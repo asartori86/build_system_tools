@@ -3,14 +3,9 @@ project('basic', 'cpp',
 			   'buildtype=debug',
 			   'warning_level=3' ])
 
-
-main = files('main.cc')
-
-srcs = files(['src/physics.cc',
-              'src/mathematics.cc'])
-
 inc = include_directories('include')
 
-executable('basic', main, srcs,
+executable('basic', ['main.cc','src/physics.cc',
+                     'src/mathematics.cc'], 
            include_directories: inc)
 
