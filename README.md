@@ -2,3 +2,11 @@
 
 Gentle introduction to the basics of `CMake` and `meson` and unit-testing with `gtest`.
 
+1. How to generate an executable from several source files organized in subfolders. Go to [01_basic](./01_basic)
+2. How to generate a shared library and link your main against it. Go to [02_shared_libraries](./02_shared_libraries)
+3. How to organize your code such that it is modular. Go to [03_modularity](./03_modularity)
+4. How to perform *integration* tests. Go to [04_tests](./04_tests)
+5. How to find and use an external library. Go to [05_external_library](./05_external_library)
+6. How to perform *unit* tests with `gtest`. Go to [06_unit_tests](./06_unit_tests)
+7. How to customize the build process. Go to [07_customization](./07_customization)
+
