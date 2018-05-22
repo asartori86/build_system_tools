@@ -17,7 +17,7 @@ target_link_libraries(${name} mathematics physics)
 
 enable_testing()
 
-set(GTEST_DIR "" CACHE STRING "google test dir")
+set(GTEST_DIR "" CACHE PATH "google test dir")
 
 find_path(GTEST_INC_DIR "gtest/gtest.h"
   HINTS
