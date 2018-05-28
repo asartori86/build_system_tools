@@ -85,14 +85,14 @@ Since the header of the library `mathematics` are in a non-default path, we tell
 
 ##### Meson useful commands
 
-```python
+```cmake
 subdir('dir_name')
 
 a_dep = declare_dependency(include_directories: inc_dirs,
                           link_with: a_lib)
 ```
 
-```python
+```cmake
 executable('exe_name', 
            ['source/file1.cc', 'other/suource/file.cc'], 
            include_directories: inc,

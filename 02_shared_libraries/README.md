@@ -62,7 +62,7 @@ The call to `target_link_libraries` must be in the same `CMakeLists.txt` where `
 
 ##### Meson useful commands
 
-```python
+```cmake
 a_lib = shared_library('name_of_the_lib', ['src_1.cc', 'src_2.cc'],
                          include_directories : inc_dirs)
 

@@ -62,7 +62,7 @@ project(project_name CXX)
 
 ##### Meson useful commands
 
-```python
+```cmake
 project('project_name', 'cpp',
          default_options : ['cpp_std=c++11']) # mandatory as first statement
 
