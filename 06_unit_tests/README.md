@@ -55,9 +55,15 @@ In `meson` is much easier to use thanks to `meson wrap`.
 ### CMake
 
 - Create a file `CMakeLists.txt` (case sensitive) with proper commands
+
 - Create a build directory and `cd` in it (e.g. `mkdir build_cmake && cd build_cmake`)
-- Run `cmake /path/to/CMakeLists.txt` (e.g. `cmake ..`) 
+
+- Run `cmake /path/to/CMakeLists.txt` -DVARIABLE_NAME=val (e.g. 
+
+  ```cmake -DGTEST_DIR=/path/to/gtest/ ..```) 
+
 - Compile with `make`
+
 - Run the tests with `ctest`
 
 ##### CMake useful commands
