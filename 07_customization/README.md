@@ -69,12 +69,27 @@ $ tree -I "*md"
 
   ```cmake -DBUILD_PHYSICS=OFF ..```
 
+#### config_cmake.h.in
+
+```c++
+#ifndef __my_config_h__
+#define __my_config_h__
+
+#define MY_PROJECT_VERSION "@MY_PROJECT_VERSION@" 
+
+#cmakedefine BUILD_PHYSICS
+#cmakedefine BUILD_MATHEMATICS
+
+#endif
+
+```
+
+
+
 ##### CMake useful commands
 
 ```cmake
-set(customization_VERSION_MAJOR 1)
-set(customization_VERSION_MINOR 0)
-
+set(MY_PROJECT_VERSION "1.0")
 
 option(ENABLE_TESTING "Enable testing for this project" OFF)
 option(BUILD_PHYSICS "Generate and use physics library" ON)
@@ -123,6 +138,23 @@ endif()
 - Compile with `ninja`
 
 - Run the tests with `meson test` or `ninja test`
+
+#### config_meson.h.in
+
+```c++
+#ifndef __my_config_h__
+#define __my_config_h__
+
+#define MY_PROJECT_VERSION @version@
+
+#mesondefine BUILD_PHYSICS
+#mesondefine BUILD_MATHEMATICS
+
+#endif
+
+```
+
+
 
 ##### Meson useful commands
 
