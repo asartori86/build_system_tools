@@ -1,2 +1,0 @@
-subdir('mathematics')
-subdir('physics')

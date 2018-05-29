@@ -1,5 +1,0 @@
-option('BUILD_MATHEMATICS', type: 'boolean', value: true)
-option('BUILD_PHYSICS', type: 'boolean', value: true)
-option('ENABLE_TESTING', type: 'boolean', value: false,
-   description: 'Enable integration tests and unit tests. Integration tests are enabled if and only if both mathematics and phyiscs libraries are compiled.')
-
