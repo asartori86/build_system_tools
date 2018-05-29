@@ -1,8 +1,8 @@
 # Build system tools and unit testing  [![Build Status](https://travis-ci.org/asartori86/build_system_tools.svg?branch=master)](https://travis-ci.org/asartori86/build_system_tools)
 
-Gentle introduction to the basics of `CMake` and `meson` and unit-testing with `gtest`.
+Gentle introduction to the basics of [CMake](https://cmake.org/) and [meson](http://mesonbuild.com/), and unit-testing with [gtest](https://github.com/google/googletest/).
 
-1. How to generate an executable from several source files organized in subfolders: [01_basic](./01_basic)
+1. How to generate an executable from several source files organized in sub-folders: [01_basic](./01_basic)
 2. How to generate a shared library and link your main against it: [02_shared_libraries](./02_shared_libraries)
 3. How to organize your code such that it is modular: [03_modularity](./03_modularity)
 4. How to perform *integration* tests: [04_tests](./04_tests)
