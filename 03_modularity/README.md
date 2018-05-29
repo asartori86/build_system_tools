@@ -17,27 +17,29 @@ $ tree -P "*.h|*.cc"
         └── physics.h
 ```
 
-We create a root `CMakeLists.txt` and `meson.build` in the top directory, and they will call all the other `CMakeLists.txt` and `meson.build`, respectively.
+For each "module" we create a `CMakeLists.txt` and `meson.build`. The
+`CMakeLists.txt` and `meson.build` in the top directory will call all
+the other `CMakeLists.txt`s and `meson.build`s, respectively.
 
 ```bash
-$ tree -P "*.h|*.cc|CMakeLists.txt|meson.build"
+$ tree -I "*md"
 .
-├── CMakeLists.txt
+├── CMakeLists.txt 
 ├── include
 │   └── constants.h
 ├── main.cc
-├── meson.build
+├── meson.build 
 └── src
-    ├── CMakeLists.txt
+    ├── CMakeLists.txt <-------------------------
     ├── mathematics
-    │   ├── CMakeLists.txt
+    │   ├── CMakeLists.txt <---------------------
     │   ├── mathematics.cc
     │   ├── mathematics.h
-    │   └── meson.build
-    ├── meson.build
+    │   └── meson.build <------------------------
+    ├── meson.build <----------------------------
     └── physics
-        ├── CMakeLists.txt
-        ├── meson.build
+        ├── CMakeLists.txt <---------------------
+        ├── meson.build <------------------------
         ├── physics.cc
         └── physics.h
 

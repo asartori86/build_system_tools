@@ -23,8 +23,8 @@ $ tree -I "*md"
 │       ├── meson.build
 │       ├── physics.cc
 │       └── physics.h
-├── subprojects
-│   └── gtest.wrap <------------------------------------------
+├── subprojects <--------------------------------
+│   └── gtest.wrap <-----------------------------
 └── tests
     ├── CMakeLists.txt
     ├── integration_tests
@@ -36,7 +36,7 @@ $ tree -I "*md"
     │   ├── compare.sh
     │   └── meson.build
     ├── meson.build
-    └── unit_tests <------------------------------------------
+    └── unit_tests <-----------------------------
         ├── CMakeLists.txt
         ├── mathematics_01.cc
         ├── meson.build

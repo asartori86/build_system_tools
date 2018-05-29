@@ -12,11 +12,11 @@ $ tree -I "*md"
 ├── CMakeLists.txt
 ├── include
 │   ├── constants.h
-│   ├── my_project_config_cmake.h.in <------------------------------
-│   └── my_project_config_meson.h.in <------------------------------
+│   ├── my_project_config_cmake.h.in <-----------
+│   └── my_project_config_meson.h.in <-----------
 ├── main.cc
 ├── meson.build
-├── meson_options.txt <---------------------------------------------
+├── meson_options.txt <--------------------------
 ├── src
 │   ├── CMakeLists.txt
 │   ├── mathematics

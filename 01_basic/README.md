@@ -1,7 +1,5 @@
 ## How to generate an executable from several source files organized in subfolders
 
-
-
 ```bash
 $ tree -P "*.h|*.cc"
 .
@@ -10,6 +8,22 @@ $ tree -P "*.h|*.cc"
 │   ├── mathematics.h
 │   └── physics.h
 ├── main.cc
+└── src
+    ├── mathematics.cc
+    └── physics.cc
+```
+
+Both `cmake` and `meson` require a specific file to be in the top directory of the project 
+```bash
+$ tree -I "*md"
+.
+├── CMakeLists.txt <-----------------------------
+├── include
+│   ├── constants.h
+│   ├── mathematics.h
+│   └── physics.h
+├── main.cc
+├── meson.build <--------------------------------
 └── src
     ├── mathematics.cc
     └── physics.cc

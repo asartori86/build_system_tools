@@ -2,19 +2,6 @@
 
 Let us create two shared libraries `libmathematics.so` and `libphysics.so` and link our `main.cc`  against them
 
-```bash
-$ tree -P "*.h|*.cc"
-.
-├── include
-│   ├── constants.h
-│   ├── mathematics.h
-│   └── physics.h
-├── main.cc
-└── src
-    ├── mathematics.cc
-    └── physics.cc
-```
-
 ### CMake
 
 - Create a file `CMakeLists.txt` (case sensitive) with proper commands
@@ -35,7 +22,6 @@ In `add_library` omit the prefix `lib` in the name of the library. To make a lib
 ```cmake
 add_libary(mathematics SHARED ...)
 ```
-
 
 
 The call to `target_link_libraries` must be in the same `CMakeLists.txt` where `exe` has been defined.

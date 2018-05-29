@@ -23,9 +23,9 @@ $ tree -I "*md"
 │       ├── meson.build
 │       ├── physics.cc
 │       └── physics.h
-└── tests
+└── tests <--------------------------------------
     ├── CMakeLists.txt
-    ├── integration_tests
+    ├── integration_tests <----------------------
     │   ├── 01.input
     │   ├── 01.output
     │   ├── 02.input
