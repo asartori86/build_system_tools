@@ -1,7 +1,7 @@
 
 _i = [include_directories('.'), inc_dirs]
 
-_l = shared_library('physics',
+_l = library('physics',
                     files(['physics.cc', 'physics.h']),
                     include_directories: _i)
 
