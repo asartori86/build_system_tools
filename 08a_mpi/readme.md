@@ -6,7 +6,7 @@ The brute force approach is to use `mpicxx` as compiler
 
 - Create a file `CMakeLists.txt` (case sensitive) with proper commands
 - Create a build directory and `cd` in it (e.g. `mkdir build_cmake && cd build_cmake`)
-- Run `cmake -DCMAKE_CXX_COMPILER=mpicxx /path/to/CMakeLists.txt` (e.g. `cmake .. -dCMAKE_CXX_COMPILER=mpicxx`) 
+- Run `cmake -DCMAKE_CXX_COMPILER=mpicxx /path/to/CMakeLists.txt` (e.g. `cmake .. -DCMAKE_CXX_COMPILER=mpicxx`) 
 - Compile with `make`
 
 ### Meson
