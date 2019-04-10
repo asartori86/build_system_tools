@@ -7,22 +7,22 @@ addons:
       - ubuntu-toolchain-r-test
     packages:
       - libboost-all-dev
-      - libopenmpi-dev
+      # - libopenmpi-dev
 
 
 matrix:
   include:
     - os: linux
       compiler: gcc
-    # - os: osx
-    #   compiler: clang
+    - os: osx
+      compiler: clang
 
 before_install:
   - if [[ "$TRAVIS_OS_NAME" == "linux" ]]; then wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh && bash Miniconda3-latest-Linux-x86_64.sh -b -p _miniconda;  else  wget https://repo.continuum.io/miniconda/Miniconda3-latest-MacOSX-x86_64.sh && bash Miniconda3-latest-MacOSX-x86_64.sh -b -p _miniconda; fi
   - export PATH="$PWD/_miniconda/bin:$PATH"
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
-  - conda install meson
+  - conda install meson mpich2
 
 install: true
 
