@@ -1,3 +1,4 @@
 googletest-release*
 packagecache*
 *build*
+!meson.build
