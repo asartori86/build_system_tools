@@ -9,4 +9,5 @@ Gentle introduction to the basics of [CMake](https://cmake.org/) and [meson](htt
 5. How to find and use an external library: [05_external_library](./05_external_library)
 6. How to perform *unit* tests with `gtest`: [06_unit_tests](./06_unit_tests)
 7. How to customize the build process: [07_customization](./07_customization)
-
+8. How compile a code with mpi (brute force) [08a_mpi](./08a_mpi)
+9. How to handle mpi dependency [08b_mpi](./08b_mpi)
