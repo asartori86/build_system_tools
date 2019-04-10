@@ -49,13 +49,13 @@ The call to `target_link_libraries` must be in the same `CMakeLists.txt` where `
 ##### Meson useful commands
 
 ```cmake
-a_lib = shared_library('name_of_the_lib', ['src_1.cc', 'src_2.cc'],
-                         include_directories : inc_dirs)
+a_lib = library('name_of_the_lib', ['src_1.cc', 'src_2.cc'],
+                include_directories : inc_dirs)
 
 executable('exe_name', 
            ['source/file1.cc', 'other/suource/file.cc'], 
            include_directories: inc,
-          link_with: [a_lib])
+           link_with: [a_lib])
 ```
 
 `inc_dirs` and `inc` are object returned by the function `include_directories()` 
