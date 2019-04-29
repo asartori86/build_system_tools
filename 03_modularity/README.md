@@ -45,6 +45,7 @@ $ tree -I "*md"
 
 ```
 
+Remember that both the libraries include the header `constants.h`, so, when you compile them, they need to know where to find it.
 
 
 ### CMake
@@ -93,6 +94,7 @@ subdir('dir_name')
 a_dep = declare_dependency(include_directories: inc_dirs,
                           link_with: a_lib)
 ```
+We define a dependency where we set the library and where to find the headers
 
 ```cmake
 executable('exe_name', 
@@ -100,6 +102,7 @@ executable('exe_name',
            include_directories: inc,
            dependencies: [a_dep, another_dep])
 ```
+A dependency created by means of the function `declare_dependency`, as well as the external dependencies, are listed with the keyword `dependencies`.
 
 
 

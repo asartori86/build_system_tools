@@ -67,6 +67,20 @@ add_test(NAME "01_run_and_diff"
 
 ```
 
+You may want to repeat the same commands for many tests using the `foreach()` function.
+
+```cmake
+set (_tests 01 02)
+
+foreach(_t ${_tests})
+  add_test(NAME ${_t}_run_and_diff
+    COMMAND ${_prefix}/compare.sh ${CMAKE_BINARY_DIR}/${name}
+    ${_prefix}/${_t}.output ${_prefix}/${_t}.input
+    WORKDIR ${CMAKE_BINARY_DIR}
+    )
+endforeach()
+
+```
  
 
 ### Meson
@@ -108,4 +122,17 @@ compare = find_program('compare.sh')
 test('test_name', compare, ...)
 ```
 
+A `foreach` functionality is provided by `meson` as well
 
+```cmake
+_tests = ['01', '02']
+
+foreach _t : _tests
+  test(_t + '_run_and_diff',
+       compare,
+       args:[exe.full_path(),
+             _prefix + '/' + _t + '.output',
+             _prefix + '/' + _t + '.input'],
+       workdir: meson.current_build_dir())
+endforeach
+```

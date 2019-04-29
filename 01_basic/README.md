@@ -77,8 +77,12 @@ project(project_name CXX)
 ##### Meson useful commands
 
 ```cmake
+ # mandatory as first statement
 project('project_name', 'cpp',
-         default_options : ['cpp_std=c++11']) # mandatory as first statement
+         default_options : ['cpp_std=c++11',
+		                    'buildtype=release',
+		                    'warning_level=3'],
+		 version: '0.1')
 
 inc = include_directories('path/to/folder/with/headers')
 
