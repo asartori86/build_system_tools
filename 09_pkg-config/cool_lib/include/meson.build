@@ -1,0 +1,1 @@
+install_headers('strange_sum.hpp', 'strange_mult.hpp')
