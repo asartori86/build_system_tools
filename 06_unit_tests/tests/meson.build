@@ -1,6 +1,6 @@
 subdir('integration_tests')
 
-gtest = dependency('gtest', main: true,
+gtest = dependency('gtest', 
                    fallback : ['gtest', 'gtest_main_dep'],
                    required: true)
 
