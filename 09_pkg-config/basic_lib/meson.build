@@ -7,7 +7,7 @@ conf_data.set_quoted('version', meson.project_version())
 conf_data.set('shared_lib', get_option('shared_lib'))
 conf_data.set('static_lib', get_option('static_lib'))
 
-configure_file(input: './meson_config.h.in',
+configure_file(input: './my_project_config.h.in',
 	       output: 'meson_config.h',
 	       configuration: conf_data)
 

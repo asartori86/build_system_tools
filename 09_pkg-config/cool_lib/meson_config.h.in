@@ -1,9 +1,0 @@
-#ifndef __MESON_CONFIG_H
-#define __MESON_CONFIG_H
-
-#define _PROJECT_VERSION @version@
-
-#mesondefine shared_lib
-#mesondefine static_lib
-
-#endif

@@ -1,1 +1,1 @@
-install_headers('strange_sum.hpp', 'strange_mult.hpp')
+install_headers('strange_sum.hpp', 'strange_mult.hpp', 'min_vec.hpp', 'max_vec.hpp')
