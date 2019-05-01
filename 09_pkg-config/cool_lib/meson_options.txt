@@ -1,2 +1,0 @@
-option('shared_lib', type: 'boolean', value: 'true', description: 'Creates a shared library.')
-option('static_lib', type: 'boolean', value: 'false', description: 'Creates a static library.')
