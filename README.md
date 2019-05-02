@@ -12,3 +12,4 @@ Gentle introduction to the basics of [CMake](https://cmake.org/) and [meson](htt
 7. How to customize the build process: [07_customization](./07_customization)
 8. How compile a code with mpi (brute force) [08a_mpi](./08a_mpi)
 9. How to handle mpi dependency [08b_mpi](./08b_mpi)
+10. How to generate and use `pkg-config` files [09_pkg-config](./09_pkg-config)
