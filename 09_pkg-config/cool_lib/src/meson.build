@@ -8,7 +8,7 @@ src = [strange_sum, strange_mult, min_vec, max_vec]
 basic_dep = dependency('basic')
 
 cxx = meson.get_compiler('cpp')
-extra_prefix = '/tmp/extra/'
+extra_prefix = meson.current_source_dir() + '/../../installed_libs/extra/'
 extra_dep = cxx.find_library('extra',
 			     required: true, 
 			     dirs: [extra_prefix + 'lib'],

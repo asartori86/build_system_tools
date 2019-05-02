@@ -38,6 +38,8 @@ script:
   - pushd 08a_mpi && CXX=mpicxx meson bmeson && cd bmeson && ninja && rm -rf * && cmake -DCMAKE_CXX_COMPILER=mpicxx .. && make && popd
   - pushd 08b_mpi && meson bmeson && cd bmeson && ninja && rm -rf * && cmake .. && make && popd
   - pushd 09_pkg-config && pushd extra_lib && meson -Dprefix=$PWD/../installed_libs/extra build && pushd build && ninja install && popd && popd &&
+    export LD_LIBRARY_PATH=$PWD/installed_libs/extra/lib:$LD_LIBRARY_PATH &&
     pushd basic_lib && meson -Dprefix=$PWD/../installed_libs/basic build && pushd build && ninja install && popd && popd &&
+    export PKG_CONFIG_PATH=$PWD/installed_libs/basic/lib/pkgconfig:$PKG_CONFIG_PATH && export LD_LIBRARY_PATH=$PWD/installed_libs/basic/lib:$LD_LIBRARY_PATH &&
     pushd cool_lib && meson -Dprefix=$PWD/../installed_libs/cool build && pushd build && ninja install && popd && popd
 
