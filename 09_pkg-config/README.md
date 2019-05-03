@@ -75,42 +75,42 @@ root
 │   ├── include
 │   │   ├── abs.hpp
 │   │   ├── dot.hpp
-│   │   ├── meson.build
 │   │   ├── mult_range.hpp
-│   │   └── sum_range.hpp
+│   │   ├── sum_range.hpp
+│   │   └── meson.build
 │   ├── meson.build
 │   ├── meson_options.txt
 │   ├── my_project_config.h.in
 │   └── src
 │       ├── abs.cpp
 │       ├── dot.cpp
-│       ├── meson.build
 │       ├── mult_range.cpp
-│       └── sum_range.cpp
+│       ├── sum_range.cpp
+│       └── meson.build
 ├── cool_lib
 │   ├── include
 │   │   ├── max_vec.hpp
-│   │   ├── meson.build
 │   │   ├── min_vec.hpp
 │   │   ├── strange_mult.hpp
-│   │   └── strange_sum.hpp
+│   │   ├── strange_sum.hpp
+│   │   └── meson.build
 │   ├── meson.build
 │   └── src
 │       ├── max_vec.cpp
-│       ├── meson.build
 │       ├── min_vec.cpp
 │       ├── strange_mult.cpp
-│       └── strange_sum.cpp
+│       ├── strange_sum.cpp
+│       └── meson.build
 ├── extra_lib
 │   ├── include
 │   │   ├── max.hpp
-│   │   ├── meson.build
-│   │   └── min.hpp
+│   │   ├── min.hpp
+│   │   └── meson.build
 │   ├── meson.build
 │   └── src
 │       ├── max.cpp
-│       ├── meson.build
-│       └── min.cpp
+│       ├── min.cpp
+│       └── meson.build
 ├── main.cpp
 └── pkg-config_files.md
 ```
@@ -166,7 +166,7 @@ What do we observe from these files:
 How can we use these files to create an executable from the `main.cpp`code?
 ```
 $ export PKG_CONFIG_PATH=/tmp/cool/lib/pkgconfig/:/tmp/basic/lib/pkgconfig
-$ export /tmp/extra/lib/:/tmp/othersss/basic/lib/:/tmp/othersss/cool/lib/
+$ export LD_LIBRARY_PATH=/tmp/extra/lib/:/tmp/basic/lib/:/tmp/cool/lib/
 $ g++ -c main.cpp `pkg-config --cflags cool` -o main.o
 $ g++ main.o `pkg-config --libs cool` -o main.x
 ```
