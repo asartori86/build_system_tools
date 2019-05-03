@@ -170,12 +170,12 @@ $ export LD_LIBRARY_PATH=/tmp/extra/lib/:/tmp/basic/lib/:/tmp/cool/lib/
 $ g++ -c main.cpp `pkg-config --cflags cool` -o main.o
 $ g++ main.o `pkg-config --libs cool` -o main.x
 ```
-If we wanted to link the main function against static libraries, these files are not correct. We need the static version of the `libextra` library. We should modify the `cool.pc` file like
+If we wanted to link the main function against static libraries, these files are not correct. We need the static version of the `libextra` library. For that, we should (have to) modify the `cool.pc` file like
 ```
 Libs.private: -L/tmp/extra/lib/ -lextra
 ```
-and now link it with
+and add the path to the static version of the `libbasic`library to the PKG_CONGIF_PATH variable. Now link the main function with
 ```
-$ export /tmp/cool/lib/pkgconfig/:/tmp/static_libs/basic/lib/pkgconfig
+$ export LD_LIBRARY_PATH=/tmp/cool/lib/pkgconfig/:/tmp/static_libs/basic/lib/pkgconfig
 $ g++ main.o -static `pkg-config --libs --static cool` -o main.x
 ```
