@@ -22,7 +22,7 @@ before_install:
   - export PATH="$PWD/_miniconda/bin:$PATH"
   - conda config --set always_yes yes --set changeps1 no
   - conda update -q conda
-  - conda install meson mpich2
+  - conda install meson mpi
 
 install: true
 
