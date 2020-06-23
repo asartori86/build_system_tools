@@ -77,7 +77,7 @@ project(project_name CXX)
 ##### Meson useful commands
 
 ```cmake
- # mandatory as first statement
+# mandatory as first statement
 project('project_name', 'cpp',
          default_options : ['cpp_std=c++11',
 		                    'buildtype=release',

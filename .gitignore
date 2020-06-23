@@ -2,3 +2,5 @@ googletest-release*
 packagecache*
 *build*
 !meson.build
+subprojects*
+!*.wrap
