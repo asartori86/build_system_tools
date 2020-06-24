@@ -1,3 +1,7 @@
+gtest = dependency('gtest', 
+                   fallback : ['gtest', 'gtest_main_dep'],
+                   required: true)
+
 _tests_math = ['mathematics_01.cc']
 
 foreach _t : _tests_math

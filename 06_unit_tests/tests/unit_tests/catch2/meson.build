@@ -1,3 +1,7 @@
+catch2_dep = dependency('catch2', 
+                   fallback : ['catch2', 'catch2_dep'],
+                   required: true)
+
 _tests_math = ['mathematics_01_catch.cpp']
 
 catch2 = declare_dependency(sources:'catch.cpp',dependencies:[catch2_dep])
