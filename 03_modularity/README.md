@@ -87,14 +87,14 @@ Since the header of the library `mathematics` are in a non-default path, we tell
 - Compile with `ninja`
 
 ##### Meson useful commands
-
+We define a dependency where we set the library and where to find the headers
 ```cmake
 subdir('dir_name')
 
 a_dep = declare_dependency(include_directories: inc_dirs,
                           link_with: a_lib)
 ```
-We define a dependency where we set the library and where to find the headers
+
 
 ```cmake
 executable('exe_name', 

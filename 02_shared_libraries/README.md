@@ -17,7 +17,7 @@ add_library(name_of_the_lib SHARED src_1.cc src_2.cc)
 target_link_libraries(exe name_of_the_lib)
 ```
 
-In `add_library` omit the prefix `lib` in the name of the library. To make a library `libmathematics.so` I need to call
+In `add_library` omit the prefix `lib` in the name of the library. To define a library named `libmathematics.so` I can write
 
 ```cmake
 add_libary(mathematics SHARED ...)
